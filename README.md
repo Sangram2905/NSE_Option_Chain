@@ -1,4 +1,5 @@
-#Disclaimer: Not financial advice, just an programing skill demo apply to all the reps.
+# Disclaimer: Not financial advice, just an programing skill demo apply to all the programs.
+
 NSE_Option_Chain
 Required to run BOT/ Program a Python IDE and install NSE API with "pip install nsetools" in CMD pip install yfinance for yahoofinance
 
