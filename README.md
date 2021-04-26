@@ -9,7 +9,7 @@ This program is an my modification to the original program of https://github.com
 The modifyed program as per my requirement and logic base on Mr. Nitin Murarka’s https://www.youtube.com/watch?v=vwSjRO4wGYE&ab_channel=Elearnmarkets.com ==> column "CHOI_diff"
 and other columns and data points with graph are my own findigs and logic.
 
-the Varun program have much more functions than my plz try this one first.
+the Varun program have much more functions than my plz try Varun program first.
 
 The other repository contents Stock Market BOTs for different Trading ideas The BOT’s give a look. 
 
