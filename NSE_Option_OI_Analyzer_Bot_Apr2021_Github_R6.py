@@ -438,9 +438,9 @@ class NseOI:
         self.options.add_separator()
         self.options.add_command(label="Live Graph Start/Stop", command=self.toggle)
         self.options.add_separator()
-        self.options.add_command(label="Machine_Learning_SR", command=self.program1)
+        #self.options.add_command(label="Machine_Learning_SR", command=self.program1)
         #self.options.add_command(label="Machine_Learning_Classi", command=self.program2)
-        self.options.add_separator()
+        #self.options.add_separator()
         
         self.options.add_command(label="Quit", command=self.close)
         menubar.add_cascade(label="Menu", menu=self.options)
