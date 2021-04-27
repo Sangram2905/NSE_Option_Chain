@@ -163,7 +163,7 @@ class NseOI:
             except Exception as err:
                 #print(request)
                 #print(response)
-                print('NSE Site data pull error 5',self.str_current_time)
+                print('NSE Site data pull error 5 , check network connection',self.str_current_time)
                 #print(err, "5")
                 return
         if response is not None:
