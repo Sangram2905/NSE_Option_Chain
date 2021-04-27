@@ -1107,12 +1107,29 @@ class NseOI:
         else:
             self.call_ITM_Stp = self.spotprice-100
             self.put_ITM_Stp = self.spotprice+100
+        try:
+            index = int(df[df['Strike Price'] == self.sp].index.tolist()[0]) ## replace self.sp with self.spotprice to change the fix to dynamic slection of CHOI
+        except IndexError as err:
+            print(err, "10")
+            messagebox.showerror(title="Error",
+                                 message="Incorrect Strike Price.\nPlease enter correct Strike Price.")
+            self.root.destroy()
+            return
         
         #ITM Index
-        self.call_ITM_index = int(df[df['Strike Price'] == self.call_ITM_Stp].index.tolist()[0])
-        #print("call",self.call_ITM_Stp)
-        self.put_ITM_index = int(df[df['Strike Price'] == self.put_ITM_Stp].index.tolist()[0])
-        #print("put",self.put_ITM_Stp)
+        try:
+            self.call_ITM_index = int(df[df['Strike Price'] == self.call_ITM_Stp].index.tolist()[0])
+            #print("call",self.call_ITM_Stp)
+        except IndexError:
+            self.call_ITM_index = index
+            
+
+        try:
+            self.put_ITM_index = int(df[df['Strike Price'] == self.put_ITM_Stp].index.tolist()[0])
+            #print("put",self.put_ITM_Stp)
+        except IndexError:
+            self.put_ITM_index = index
+  
         
         self.call_ITM_pre = df.iloc[self.call_ITM_index]['Last Traded Price'][0]
         self.put_ITM_pre = df.iloc[self.put_ITM_index]['Last Traded Price'][1]
@@ -1262,14 +1279,6 @@ class NseOI:
         #print("Spotprice",self.spotprice)
 
 
-        try:
-            index = int(df[df['Strike Price'] == self.sp].index.tolist()[0]) ## replace self.sp with self.spotprice to change the fix to dynamic slection of CHOI
-        except IndexError as err:
-            print(err, "10")
-            messagebox.showerror(title="Error",
-                                 message="Incorrect Strike Price.\nPlease enter correct Strike Price.")
-            self.root.destroy()
-            return
         
         
         ## IV cacluation 
